@@ -122,7 +122,7 @@ export default function Page() {
                   Découvrez mes derniers travaux
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  J'ai travaillé sur une variété de projets, des sites web simples
+                  J&apos;ai travaillé sur une variété de projets, des sites web simples
                   aux applications web complexes. Voici quelques-uns de mes
                   favoris.
                 </p>

@@ -31,7 +31,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/mou-inoks",
+        url: "https://github.com/0x2e73",
         icon: Icons.github,
 
         navbar: true,
@@ -143,7 +143,7 @@ export const DATA = {
   projects: [
     {
       "title": "AI Law Shield",
-      "href": "https://github.com/mou-inoks/ai-law-shield",
+      "href": "https://github.com/0x2e73/ai-law-shield",
       "dates": "2024 - Présent",
       "active": true,
       "description": "AI Law Shield est un outil alimenté par l'IA conçu pour analyser rapidement les contrats, les politiques de confidentialité et les conditions de service. Il identifie les clauses risquées, met en évidence les points critiques et offre des recommandations pour protéger les utilisateurs des pièges juridiques potentiels. Un projet open-source visant à rendre la protection juridique plus accessible à tous. 🚀📄",

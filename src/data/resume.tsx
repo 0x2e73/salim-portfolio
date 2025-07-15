@@ -8,7 +8,7 @@ export const DATA = {
   description:
     "Étudiant en informatique passionné par le développement d'applications et l'entrepreneuriat. Freelance en parallèle pour créer des solutions digitales innovantes.",
   summary:
-    "Je suis actuellement en dernière année de CFC en informatique avec une spécialisation en développement d’applications. Parallèlement, je réalise des projets entrepreneuriaux en tant que freelance, en me concentrant sur la création de plateformes modernes et intuitives, comme une application de mise en relation entre particuliers et bureaux d'études. Je suis passionné par la conception de logiciels qui répondent à des besoins réels, tout en intégrant des technologies avancées comme React, .NET. Mon objectif est de poursuivre un master en informatique tout en développant des projets ambitieux pour aider les entreprises à évoluer dans un monde numérique.",
+    "Je viens de terminer mon apprentissage en informatique (CFC avec spécialisation en développement d’applications) en août 2025. J’ai été admis en Technicien ES au CFPT, où je poursuis ma formation pour renforcer mes compétences techniques et stratégiques. Parallèlement, j’ai cofondé Klyn-AI, une petite société en nom commun, avec pour mission d’aider les entreprises à automatiser leurs processus grâce à l’intelligence artificielle. Mon objectif est clair : proposer des solutions concrètes, simples à intégrer, mais puissantes, pour améliorer la productivité et l’expérience client. Je reste passionné par la conception de logiciels qui répondent à de vrais besoins, en m’appuyant sur des technologies modernes comme React, .NET ou encore des outils d’automatisation avancés. Mon ambition est de continuer à développer des projets à fort impact, tout en poursuivant à terme un master en informatique.",
   avatarUrl: "/me.jpeg",
   skills: [
     "React",
@@ -160,78 +160,14 @@ export const DATA = {
       ],
       "image": "/ai-law-app.webp",
     },
-    {
-      "title": "Application Web de Gestion de livraison de Pizza",
-      "href": "https://github.com/mou-inoks/pizza-management-web",
-      "dates": "2023 - Présent",
-      "active": true,
-      "description": "Cette application web est conçue pour gérer les employés et la planification des opérations de livraison. Elle comprend des fonctionnalités pour assigner des itinéraires de livraison, gérer les horaires de travail et suivre les performances afin d'optimiser l'efficacité opérationnelle et améliorer le service client.",
-      "technologies": [
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Material-UI",
-        "Authentification JWT"
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/pizza-management-app.png",  
-    },
-    {
-      "title": "Site Web Globalbat SA",
-      "href": "https://www.globalbat.ch",
-      "dates": "2023 - Présent",
-      "active": true,
-      "description": "Développement du site officiel de Globalbat SA, une entreprise leader dans le secteur du bâtiment et de la construction. Le site présente leurs services, projets et l'histoire de l'entreprise, offrant une présence en ligne moderne et professionnelle.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "WordPress",
-        "Bootstrap"
-      ],
-      "links": [
-        {
-          "icon": <Icons.globe className='size-3' />
-        }
-      ],
-      "image": "/globalbat-website.png",
-      },
-    {
-      "title": "Site Web de Lavage de Voitures",
-      "href": "https://github.com/mou-inoks/car-wash-website",
-      "dates": "2023 - Présent",
-      "active": true,
-      "description": "Conception et développement d'un site web convivial pour une entreprise locale de lavage de voitures. Le site permet aux clients de réserver des services en ligne, de consulter les plans tarifaires et d'en savoir plus sur les traitements disponibles. Accent mis sur le design réactif et l'expérience utilisateur intuitive.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "PHP",
-        "WordPress"
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/clean-car-website.avif",
-    },
-    {
+     {
       "title": "Jeux de la Vie",
-      "href": "https://github.com/mou-inoks/jeux-de-la-vie",
+      "href": "https://jeux-de-la-vie-conway.vercel.app/",
       "dates": "2023 - Présent",
       "active": true,
-      "description": "Création d'une simulation du Jeu de la Vie de Conway en utilisant C# pour la logique backend et React.js pour l'interface front-end. Le projet démontre les automates cellulaires et inclut des fonctionnalités interactives comme l'ajustement de la taille de la grille et la vitesse de l'évolution.",
+      "description": "Simulation interactive du célèbre Jeu de la vie. Tous les calculs sont effectués côté UI, directement dans React (sans Web Worker ni backend), avec une gestion optimisée de l’état et du rendu grâce à Vite pour les performances.",
       "technologies": [
-        "C#",
         "React.js",
-        "HTML",
-        "CSS"
       ],
       "links": [
         {
@@ -239,7 +175,65 @@ export const DATA = {
         }
       ],
       "image": "/jeux-vie.jpg",
-    }
+    },
+    {
+      "title": "Template Prelime Agency (React)",
+      "href": "https://template-prelime-agency-react-js.vercel.app/",
+      "dates": "2025 - Présent",
+      "active": true,
+      "description": "Reprise d’un site HTML/CSS statique, entièrement réécrit avec React pour m’exercer à la structuration de composants et à la logique moderne d’une SPA (Single Page Application). Projet personnel réalisé pour le plaisir et la montée en compétence",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "Material-UI",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/prelime-website-template.png",  
+    },
+    {
+      "title": "Klyn AI – Site vitrine de l’agence",
+      "href": "https://klyn-ai.com",
+      "dates": "2025 - Présent",
+      "active": true,
+      "description": "Site web développé lors du lancement de Klyn AI, mon agence spécialisée dans l’automatisation par l’intelligence artificielle pour les entreprises. Design premium, interface sombre et épurée, présentation claire de l’offre avec un focus produit impactant (à la manière des plus grands sites SaaS). Développement complet en React avec une attention particulière portée à l’expérience utilisateur, la typographie, et la mise en valeur des fonctionnalités IA.",
+      "technologies": [
+        "CSS",
+        "React-js",
+        "Next-js",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/klyn-ai-website.png",
+    },
+    {
+      "title": "🧱 Clean Architecture – API Backend .NET 9",
+      "href": "https://github.com/0x2e73/clean-architecture-starter",
+      "dates": "2024 - Présent",
+      "active": true,
+      "description": "Un starter backend .NET 9 construit autour des principes de la Clean Architecture, conçu pour offrir une base de code ultra-solide, testable et maintenable. L’architecture sépare clairement les couches Domain, Application, Infrastructure et API. Tout est pensé pour la scalabilité, la lisibilité du code, et une mise en production rapide sans sacrifier la qualité technique. Parfait pour démarrer des projets d’API robustes avec une structure professionnelle dès le jour 1.",
+      "technologies": [
+        "C#",
+        ".net 9",
+        "Entity Framework Core",
+        "SQL",
+        "Authentification JWT",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/clean-architecture-cone.jfif",
+    },
+   
   ]
 
 } as const;

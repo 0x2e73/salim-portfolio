@@ -54,6 +54,26 @@ export const DATA = {
   },
   "work": [
     {
+      "company": "Shopify Dev",
+      "badges": [],
+      "location": "En ligne",
+      "title": "Développeur Freelance",
+      "logoUrl": "https://play-lh.googleusercontent.com/lQYxSdISBENwWO7RCF1j_AzjzdOaa1LUgRckYPFVvDkSWdD8P6jqCZebmAyZfufGpIY",
+      "start": "2025",
+      "end": "2025",
+      "description": "En tant qu'indépendant, j'ai contribué au développement continu d'un thème Shopify. J'ai dû entièrement repenser l'architecture du projet et refondre une grande partie du code existant afin d'améliorer les performances, la maintenabilité et la cohérence globale du thème. Mon rôle incluait également la gestion des erreurs, la revue de code et le développement de nouvelles fonctionnalités en Liquid, JavaScript et CSS."
+    },
+    {
+      "company": "PFB Rénovation",
+      "badges": [],
+      "location": "Suisse",
+      "title": "Travail d'indépendant – Développement Web",
+      "logoUrl": "/pfb-renovations.png",
+      "start": "2025",
+      "end": "2025",
+      "description": "Réalisation complète du site web https://pfb-renovation.ch/ en tant qu'indépendant. Développement d'une vitrine moderne et responsive pour présenter les services de rénovation, avec un design épuré, une navigation fluide et une optimisation SEO de base. Le site a été pensé pour refléter la qualité et le professionnalisme de l'entreprise."
+    },
+    {
       "company": "Inoks Capital",
       "badges": [],
       "location": "Genève, Suisse",
@@ -83,16 +103,7 @@ export const DATA = {
       "end": "2024",
       "description": "Projet dans le domaine de l'intelligence artificielle pour le droit. Développement de fonctionnalités d'IA pour analyser des documents juridiques, bien que je sois encore en phase d'apprentissage intensif sur les aspects avancés de l'IA."
     },
-    {
-      "company": "Application Pizza Management",
-      "badges": [],
-      "location": "En ligne",
-      "title": "Développeur Freelance",
-      "logoUrl": "/pizza-web-app.jpeg",
-      "start": "2023",
-      "end": "2023",
-      "description": "Développement d'une application web de gestion de commandes pour une pizzeria. L'application permet de gérer les commandes, les stocks, et les livraisons. Utilisation de React pour le frontend et Node.js pour le backend."
-    },
+
     {
       "company": "CFPT de Genève",
       "badges": [],
@@ -142,78 +153,6 @@ export const DATA = {
   // ],
   projects: [
     {
-      "title": "AI Law Shield",
-      "href": "https://github.com/0x2e73/ai-law-shield",
-      "dates": "2024 - Présent",
-      "active": true,
-      "description": "AI Law Shield est un outil alimenté par l'IA conçu pour analyser rapidement les contrats, les politiques de confidentialité et les conditions de service. Il identifie les clauses risquées, met en évidence les points critiques et offre des recommandations pour protéger les utilisateurs des pièges juridiques potentiels. Un projet open-source visant à rendre la protection juridique plus accessible à tous. 🚀📄",
-      "technologies": [
-        "Python",
-        "Apprentissage automatique",
-        "Traitement du langage naturel (NLP)",
-        "OpenAI GPT-3"
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/ai-law-app.webp",
-    },
-     {
-      "title": "Jeux de la Vie",
-      "href": "https://jeux-de-la-vie-conway.vercel.app/",
-      "dates": "2023 - Présent",
-      "active": true,
-      "description": "Simulation interactive du célèbre Jeu de la vie. Tous les calculs sont effectués côté UI, directement dans React (sans Web Worker ni backend), avec une gestion optimisée de l’état et du rendu grâce à Vite pour les performances.",
-      "technologies": [
-        "React.js",
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/jeux-vie.jpg",
-    },
-    {
-      "title": "Template Prelime Agency (React)",
-      "href": "https://template-prelime-agency-react-js.vercel.app/",
-      "dates": "2025 - Présent",
-      "active": true,
-      "description": "Reprise d’un site HTML/CSS statique, entièrement réécrit avec React pour m’exercer à la structuration de composants et à la logique moderne d’une SPA (Single Page Application). Projet personnel réalisé pour le plaisir et la montée en compétence",
-      "technologies": [
-        "React",
-        "Node.js",
-        "Express",
-        "Material-UI",
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/prelime-website-template.png",  
-    },
-    {
-      "title": "Klyn AI – Site vitrine de l’agence",
-      "href": "https://klyn-ai.com",
-      "dates": "2025 - Présent",
-      "active": true,
-      "description": "Site web développé lors du lancement de Klyn AI, mon agence spécialisée dans l’automatisation par l’intelligence artificielle pour les entreprises. Design premium, interface sombre et épurée, présentation claire de l’offre avec un focus produit impactant (à la manière des plus grands sites SaaS). Développement complet en React avec une attention particulière portée à l’expérience utilisateur, la typographie, et la mise en valeur des fonctionnalités IA.",
-      "technologies": [
-        "CSS",
-        "React-js",
-        "Next-js",
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/klyn-ai-website.png",
-    },
-    {
       "title": "🧱 Clean Architecture – API Backend .NET 9",
       "href": "https://github.com/0x2e73/clean-architecture-starter",
       "dates": "2024 - Présent",
@@ -233,7 +172,99 @@ export const DATA = {
       ],
       "image": "/clean-architecture-cone.jfif",
     },
-   
+    {
+      "title": "Jeux de la Vie",
+      "href": "https://jeux-de-la-vie-conway.vercel.app/",
+      "dates": "2023 - Présent",
+      "active": true,
+      "description": "Simulation interactive du célèbre Jeu de la vie. Tous les calculs sont effectués côté UI, directement dans React (sans Web Worker ni backend), avec une gestion optimisée de l’état et du rendu grâce à Vite pour les performances.",
+      "technologies": [
+        "React.js",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/jeux-vie.jpg",
+    },
+    {
+      "title": "💻 Loan Management App – Frontend React",
+      "href": "https://loan-app-xi-sable.vercel.a⁄pp/",
+      "dates": "2025 - Présent",
+      "active": true,
+      "description": "Application frontend développée en React JS pour gérer le prêt de périphériques. Un projet réalisé pour le plaisir et pour expérimenter avec React, TypeScript et Tailwind CSS. L'app permet de gérer les utilisateurs, les matériels, l'historique des prêts et la gestion quotidienne des emprunts. Un excellent terrain d'apprentissage pour tester des composants React modulaires et une interface responsive.",
+      "technologies": [
+        "React JS",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "links": [
+        {
+          "icon": "<Icons.github className='size-3' />"
+        }
+      ],
+      "image": "/loan-app.png",
+    },
+    {
+      "title": "AI Law Shield",
+      "href": "https://github.com/0x2e73/ai-law-shield",
+      "dates": "2024 - Présent",
+      "active": true,
+      "description": "AI Law Shield est un side project que j’ai créé pour apprendre à entraîner et exploiter un modèle d’IA capable d’analyser automatiquement des contrats, politiques de confidentialité et conditions d’utilisation. Le projet explore plusieurs aspects : scraping de données juridiques, génération de dataset annoté, analyse de clauses à risque et évaluation automatique du niveau de danger d’un document. Il ne fonctionne pas encore comme je le souhaiterais, mais il me sert de terrain d’expérimentation concret pour progresser dans le machine learning appliqué au domaine légal.",
+      "technologies": [
+        "Python",
+        "Apprentissage automatique",
+        "Traitement du langage naturel (NLP)",
+        "OpenAI GPT-3"
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/ai-law-app.webp",
+    },
+    {
+      "title": "Template Prelime Agency (React)",
+      "href": "https://template-prelime-agency-react-js.vercel.app/",
+      "dates": "2025 - Présent",
+      "active": true,
+      "description": "Reprise d’un site HTML/CSS statique, entièrement réécrit avec React pour m’exercer à la structuration de composants et à la logique moderne d’une SPA (Single Page Application). Projet personnel réalisé pour le plaisir et la montée en compétence",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "Material-UI",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/prelime-website-template.png",
+    },
+    {
+      "title": "Klyn AI – Site vitrine de l’agence",
+      "href": "https://klyn-ai.com",
+      "dates": "2025 - Présent",
+      "active": true,
+      "description": "Site web développé lors du lancement de Klyn AI, mon agence spécialisée dans l’automatisation par l’intelligence artificielle pour les entreprises. Design premium, interface sombre et épurée, présentation claire de l’offre avec un focus produit impactant (à la manière des plus grands sites SaaS). Développement complet en React avec une attention particulière portée à l’expérience utilisateur, la typographie, et la mise en valeur des fonctionnalités IA.",
+      "technologies": [
+        "CSS",
+        "React-js",
+        "Next-js",
+      ],
+      "links": [
+        {
+          "icon": <Icons.github className='size-3' />
+        }
+      ],
+      "image": "/klyn-ai-website.png",
+    },
+
+
   ]
 
 } as const;

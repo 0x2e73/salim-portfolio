@@ -190,7 +190,7 @@ export const DATA = {
     },
     {
       "title": "💻 Loan Management App – Frontend React",
-      "href": "https://loan-app-xi-sable.vercel.a⁄pp/",
+      "href": "https://loan-app-xi-sable.vercel.app/",
       "dates": "2025 - Présent",
       "active": true,
       "description": "Application frontend développée en React JS pour gérer le prêt de périphériques. Un projet réalisé pour le plaisir et pour expérimenter avec React, TypeScript et Tailwind CSS. L'app permet de gérer les utilisateurs, les matériels, l'historique des prêts et la gestion quotidienne des emprunts. Un excellent terrain d'apprentissage pour tester des composants React modulaires et une interface responsive.",

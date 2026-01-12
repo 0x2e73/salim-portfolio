@@ -8,7 +8,7 @@ export const DATA = {
   description:
     "Étudiant en informatique passionné par le développement d'applications et l'entrepreneuriat. Freelance en parallèle pour créer des solutions digitales innovantes.",
   summary:
-    "Je viens de terminer mon apprentissage en informatique (CFC avec spécialisation en développement d’applications) en août 2025. J’ai été admis en Technicien ES au CFPT, où je poursuis ma formation pour renforcer mes compétences techniques et stratégiques. Parallèlement, j’ai cofondé Klyn-AI, une petite société en nom commun, avec pour mission d’aider les entreprises à automatiser leurs processus grâce à l’intelligence artificielle. Mon objectif est clair : proposer des solutions concrètes, simples à intégrer, mais puissantes, pour améliorer la productivité et l’expérience client. Je reste passionné par la conception de logiciels qui répondent à de vrais besoins, en m’appuyant sur des technologies modernes comme React, .NET ou encore des outils d’automatisation avancés. Mon ambition est de continuer à développer des projets à fort impact, tout en poursuivant à terme un master en informatique.",
+    "J'ai terminé mon apprentissage en informatique (CFC avec spécialisation en développement d'applications). Je suis actuellement la formation de 2 ans de Technicien ES en développement d'applications au CFPT pour renforcer mes compétences techniques et stratégiques. Parallèlement, j'ai de l'expérience en freelance, ayant développé plusieurs projets pour des entreprises variées, allant de sites web vitrines à des applications mobiles. Mon objectif est clair : proposer des solutions concrètes, simples à intégrer, mais puissantes, pour améliorer la productivité et l'expérience client. Je reste passionné par la conception de logiciels qui répondent à de vrais besoins, en m'appuyant sur des technologies modernes comme React, .NET ou encore des outils d'automatisation avancés. Mon ambition est de continuer à développer des projets à fort impact, tout en poursuivant à terme un master en informatique.",
   avatarUrl: "/me.jpeg",
   skills: [
     "React",
@@ -54,6 +54,16 @@ export const DATA = {
   },
   "work": [
     {
+      "company": "CFPT de Genève",
+      "badges": [],
+      "location": "Genève, Suisse",
+      "title": "Technicien ES",
+      "logoUrl": "/cfpt.png",
+      "start": "2025",
+      "end": "2027",
+      "description": "Formation en plein temps en Technicien ES au CFPT de Genève. Formation approfondie en développement d'applications, architecture logicielle et gestion de projets techniques."
+    },
+    {
       "company": "Shopify Dev",
       "badges": [],
       "location": "En ligne",
@@ -67,7 +77,7 @@ export const DATA = {
       "company": "PFB Rénovation",
       "badges": [],
       "location": "Suisse",
-      "title": "Travail d'indépendant – Développement Web",
+      "title": "Développeur Freelance – Développement Web",
       "logoUrl": "/pfb-renovations.png",
       "start": "2025",
       "end": "2025",
@@ -87,7 +97,7 @@ export const DATA = {
       "company": "Inoks Capital",
       "badges": [],
       "location": "Genève, Suisse",
-      "title": "Migration React JS",
+      "title": "Développeur Freelance – Migration React JS",
       "logoUrl": "/inoks-capital.svg",
       "start": "2025",
       "end": "2025",
@@ -114,27 +124,6 @@ export const DATA = {
       "description": "Au sein de l'équipe d'Inoks Capital, j'ai acquis une expertise en développement backend et frontend. J'ai principalement travaillé sur la conception et le développement d'une solution bancaire interne, mettant en œuvre des technologies modernes pour le traitement des transactions, la gestion des données et la sécurisation des informations. Ce projet m'a permis d'apprendre presque tout ce que je sais aujourd'hui en matière de programmation, avec une grande expérience dans l'intégration de services backend et la création d'interfaces frontend complexes."
     },
     {
-      "company": "Globalbat SA",
-      "badges": [],
-      "location": "Genève, Suisse",
-      "title": "Développeur Freelance",
-      "logoUrl": "/globalbat.png",
-      "start": "2023",
-      "end": "2023",
-      "description": "Création d'un site web pour Globalbat SA, une entreprise spécialisée dans la construction et la rénovation de bâtiments"
-    },
-    {
-      "company": "AI Law Shield",
-      "badges": [],
-      "location": "En ligne",
-      "title": "Freelance IA",
-      "logoUrl": "/ai-law-shield.jpeg",
-      "start": "2024",
-      "end": "2024",
-      "description": "Projet dans le domaine de l'intelligence artificielle pour le droit. Développement de fonctionnalités d'IA pour analyser des documents juridiques, bien que je sois encore en phase d'apprentissage intensif sur les aspects avancés de l'IA."
-    },
-
-    {
       "company": "CFPT de Genève",
       "badges": [],
       "location": "Genève, Suisse",
@@ -143,6 +132,16 @@ export const DATA = {
       "start": "2021",
       "end": "2025",
       "description": "Formation pratique et théorique en informatique au CFPT de Genève. Apprentissage des technologies de développement, des bases de données, de la cybersécurité et des systèmes d'exploitation, avec une forte composante projet pour mettre en pratique ces connaissances dans un environnement professionnel."
+    },
+    {
+      "company": "Globalbat SA",
+      "badges": [],
+      "location": "Genève, Suisse",
+      "title": "Développeur Freelance",
+      "logoUrl": "/globalbat.png",
+      "start": "2023",
+      "end": "2023",
+      "description": "Création d'un site web pour Globalbat SA, une entreprise spécialisée dans la construction et la rénovation de bâtiments"
     },
     {
       "company": "LinkedIn Learning",

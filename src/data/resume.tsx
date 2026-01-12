@@ -74,6 +74,36 @@ export const DATA = {
       "description": "Réalisation complète du site web https://pfb-renovation.ch/ en tant qu'indépendant. Développement d'une vitrine moderne et responsive pour présenter les services de rénovation, avec un design épuré, une navigation fluide et une optimisation SEO de base. Le site a été pensé pour refléter la qualité et le professionnalisme de l'entreprise."
     },
     {
+      "company": "Hair Lab",
+      "badges": [],
+      "location": "Martigny, Suisse",
+      "title": "Développeur Freelance – Application mobile",
+      "logoUrl": "/hair-lab.png",
+      "start": "2025",
+      "end": "2025",
+      "description": "Développement d'une application mobile React Native pour un salon de coiffure à Martigny. Double interface : clients pour la prise de rendez-vous et coiffeurs pour gérer les clients et les réservations."
+    },
+    {
+      "company": "Inoks Capital",
+      "badges": [],
+      "location": "Genève, Suisse",
+      "title": "Migration React JS",
+      "logoUrl": "/inoks-capital.svg",
+      "start": "2025",
+      "end": "2025",
+      "description": "Montée de version React JS 16 à 24 avec upgrade de tous les packages de la solution. Migration complète du code pour assurer la compatibilité avec les nouvelles versions et améliorer les performances de l'application."
+    },
+    {
+      "company": "Colomba Renovation",
+      "badges": [],
+      "location": "Suisse romande",
+      "title": "Développeur Freelance – Site web",
+      "logoUrl": "/Colomba-renovation-final.png",
+      "start": "2025",
+      "end": "2025",
+      "description": "Création d'un site web Next.js pour une entreprise de peinture intérieure et extérieure. Site vitrine avec galerie de réalisations et formulaire de contact."
+    },
+    {
       "company": "Inoks Capital",
       "badges": [],
       "location": "Genève, Suisse",
@@ -246,11 +276,11 @@ export const DATA = {
       "image": "/prelime-website-template.png",
     },
     {
-      "title": "Klyn AI – Site vitrine de l’agence",
+      "title": "Klyn AI – Site vitrine de l'agence",
       "href": "https://klyn-ai.com",
       "dates": "2025 - Présent",
       "active": true,
-      "description": "Site web développé lors du lancement de Klyn AI, mon agence spécialisée dans l’automatisation par l’intelligence artificielle pour les entreprises. Design premium, interface sombre et épurée, présentation claire de l’offre avec un focus produit impactant (à la manière des plus grands sites SaaS). Développement complet en React avec une attention particulière portée à l’expérience utilisateur, la typographie, et la mise en valeur des fonctionnalités IA.",
+      "description": "Site web développé lors du lancement de Klyn AI, mon agence spécialisée dans l'automatisation par l'intelligence artificielle pour les entreprises. Design premium, interface sombre et épurée, présentation claire de l'offre avec un focus produit impactant (à la manière des plus grands sites SaaS). Développement complet en React avec une attention particulière portée à l'expérience utilisateur, la typographie, et la mise en valeur des fonctionnalités IA.",
       "technologies": [
         "CSS",
         "React-js",

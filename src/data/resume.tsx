@@ -237,25 +237,6 @@ export const DATA = {
       "image": "/loan-app.png",
     },
     {
-      "title": "AI Law Shield",
-      "href": "https://github.com/0x2e73/ai-law-shield",
-      "dates": "2024 - Présent",
-      "active": true,
-      "description": "AI Law Shield est un side project que j’ai créé pour apprendre à entraîner et exploiter un modèle d’IA capable d’analyser automatiquement des contrats, politiques de confidentialité et conditions d’utilisation. Le projet explore plusieurs aspects : scraping de données juridiques, génération de dataset annoté, analyse de clauses à risque et évaluation automatique du niveau de danger d’un document. Il ne fonctionne pas encore comme je le souhaiterais, mais il me sert de terrain d’expérimentation concret pour progresser dans le machine learning appliqué au domaine légal.",
-      "technologies": [
-        "Python",
-        "Apprentissage automatique",
-        "Traitement du langage naturel (NLP)",
-        "OpenAI GPT-3"
-      ],
-      "links": [
-        {
-          "icon": <Icons.github className='size-3' />
-        }
-      ],
-      "image": "/ai-law-app.webp",
-    },
-    {
       "title": "Template Prelime Agency (React)",
       "href": "https://template-prelime-agency-react-js.vercel.app/",
       "dates": "2025 - Présent",

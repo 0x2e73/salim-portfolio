@@ -1,70 +1,45 @@
-import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { Instrument_Serif } from "next/font/google";
+import { SmoothScroll } from "@/components/smooth-scroll";
+import { Cursor } from "@/components/cursor";
 import "./globals.css";
 
-const fontSans = FontSans({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
-  },
-  description: DATA.description,
+  title: "Salim Mouttaki · Développeur full-stack",
+  description:
+    "Développeur full-stack à Genève. Je livre des produits qui tournent en production, et je construis les workflows IA qui les rendent fiables.",
+  metadataBase: new URL("https://salim-mouttaki.vercel.app"),
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
-    siteName: `${DATA.name}`,
-    locale: "en_US",
+    title: "Salim Mouttaki · Développeur full-stack",
+    description: "Produits en production. Workflows IA fiables.",
+    locale: "fr_CH",
     type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    title: `${DATA.name}`,
-    card: "summary_large_image",
-  },
-  verification: {
-    google: "",
-    yandex: "",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#070708",
+  colorScheme: "dark",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
-        )}
-      >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
-            {children}
-            <Navbar />
-          </TooltipProvider>
-        </ThemeProvider>
+    <html lang="fr" className={`${GeistSans.variable} ${GeistMono.variable} ${serif.variable}`}>
+      <body className="font-sans">
+        <SmoothScroll />
+        <Cursor />
+        <div className="grain" aria-hidden />
+        {children}
       </body>
     </html>
   );

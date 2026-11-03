@@ -15,13 +15,14 @@ function useDesktop() {
   return desktop;
 }
 import { FEATURED, type Project } from "@/data/content";
-import { AgentsVisual, ErpVisual, LeanVisual, SayBackVisual } from "./project-visuals";
+import { AgentsVisual, ErpVisual, KanbellVisual, LeanVisual, SayBackVisual } from "./project-visuals";
 import { MaskLine, SectionLabel } from "./reveal";
 import { Scramble } from "./scramble";
 
 const VISUALS = {
   erp: ErpVisual,
   leanppc: LeanVisual,
+  kanbell: KanbellVisual,
   sayback: SayBackVisual,
   agents: AgentsVisual,
 };
@@ -124,7 +125,7 @@ export function Projects() {
             </MaskLine>
           </h2>
           <p className="max-w-[34ch] pb-3 text-fog">
-            Quatre projets qui tournent pour de vrai : une app métier, un SaaS Shopify, un logiciel open source et des agents autonomes.
+            Cinq projets qui tournent pour de vrai : une app métier, un SaaS Shopify, une app de bureau pour agents de code, un logiciel open source et des agents autonomes.
           </p>
         </div>
       </div>

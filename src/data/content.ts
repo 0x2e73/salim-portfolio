@@ -140,7 +140,7 @@ export type Project = {
   stack: string[];
   href?: string;
   hrefLabel?: string;
-  visual: "erp" | "leanppc" | "sayback" | "agents";
+  visual: "erp" | "leanppc" | "kanbell" | "sayback" | "agents";
 };
 
 export const FEATURED: Project[] = [
@@ -182,8 +182,29 @@ export const FEATURED: Project[] = [
     visual: "leanppc",
   },
   {
-    slug: "sayback",
+    slug: "kanbell",
     index: "03",
+    name: "Kanbell",
+    tagline: "Dix agents de code. Aucun perdu de vue.",
+    status: "macOS · Linux",
+    description:
+      "Une app de bureau qui réunit tous les agents de code dans une seule fenêtre, rangés par projet. On voit lequel travaille, lequel attend une réponse et ce qu'il a changé, et on est prévenu dès qu'un agent a besoin de nous.",
+    features: [
+      { title: "Multi-agents", body: "Claude Code, Codex, Gemini CLI" },
+      { title: "Rangés par projet", body: "Un terminal par agent" },
+      { title: "Signal d'attente", body: "Notifié dès qu'un agent bloque" },
+      { title: "Changements Git", body: "Ce que chaque agent a modifié" },
+      { title: "Tableau de tâches", body: "Sources GitHub et GitLab" },
+      { title: "100 % local", body: "Pas de compte, pas de serveur" },
+    ],
+    stack: ["Electron", "React", "TypeScript", "node-pty", "xterm.js"],
+    href: "https://kanbell.com",
+    hrefLabel: "kanbell.com",
+    visual: "kanbell",
+  },
+  {
+    slug: "sayback",
+    index: "04",
     name: "SayBack",
     tagline: "La réunion passe. Le contexte reste.",
     status: "Open source · MIT",
@@ -202,7 +223,7 @@ export const FEATURED: Project[] = [
   },
   {
     slug: "agents",
-    index: "04",
+    index: "05",
     name: "Agents autonomes",
     tagline: "Automatisation par workflows IA.",
     status: "En production · 24/7",

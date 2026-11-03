@@ -241,7 +241,155 @@ export function LeanVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 03 · SayBack                                                        */
+/* 03 · Kanbell: a fictional workspace, drawn in code                  */
+/* ------------------------------------------------------------------ */
+
+type AgentState = "work" | "wait" | "done";
+
+const KB_PROJECTS = [
+  {
+    name: "portfolio",
+    dot: "bg-accent",
+    agents: [
+      { cli: "claude", task: "refonte section projets" },
+      { cli: "codex", task: "tests e2e navigation" },
+    ],
+  },
+  {
+    name: "api-facturation",
+    dot: "bg-sky-400",
+    agents: [
+      { cli: "claude", task: "migration Prisma" },
+      { cli: "gemini", task: "doc des routes" },
+    ],
+  },
+  {
+    name: "app-mobile",
+    dot: "bg-fuchsia-400",
+    agents: [{ cli: "codex", task: "écran paiement" }],
+  },
+];
+
+// Each step rewrites the state of the 5 agents, in sidebar order.
+const KB_STEPS: AgentState[][] = [
+  ["work", "work", "work", "done", "work"],
+  ["wait", "work", "work", "done", "work"],
+  ["wait", "work", "done", "done", "work"],
+  ["work", "work", "done", "done", "wait"],
+  ["work", "done", "work", "done", "wait"],
+  ["done", "done", "work", "work", "work"],
+];
+
+const KB_STATE: Record<AgentState, { label: string; dot: string; text: string }> = {
+  work: { label: "travaille", dot: "bg-accent animate-pulse", text: "text-accent" },
+  wait: { label: "attend", dot: "bg-amber-300", text: "text-amber-300" },
+  done: { label: "terminé", dot: "bg-emerald-400", text: "text-emerald-400" },
+};
+
+const KB_TERM = [
+  { t: "> refonte section projets", tone: "text-accent" },
+  { t: "● Lecture de src/components/projects.tsx", tone: "text-fog" },
+  { t: "● Édition src/data/content.ts  +24 −2", tone: "text-paper/70" },
+  { t: "● Bash  pnpm typecheck  ✓", tone: "text-emerald-400" },
+  { t: "? Pousser la branche sur origin ?  (o/n)", tone: "text-amber-300" },
+];
+
+export function KanbellVisual() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "-15%" });
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const id = setInterval(() => setStep((s) => (s + 1) % KB_STEPS.length), 1600);
+    return () => clearInterval(id);
+  }, [inView]);
+
+  const states = KB_STEPS[step];
+  const waiting = states.filter((s) => s === "wait").length;
+  let n = -1;
+
+  return (
+    <div ref={ref} className="relative h-full w-full">
+      <Frame title="Kanbell" className="flex h-full flex-col">
+        <div className="flex min-h-0 flex-1 font-mono text-[11px]">
+          {/* sidebar: projects and their agents */}
+          <div className="w-[42%] shrink-0 space-y-4 overflow-hidden border-r border-white/5 p-3 sm:w-[38%] sm:p-4">
+            {KB_PROJECTS.map((p) => (
+              <div key={p.name}>
+                <div className="flex items-center gap-2 text-paper">
+                  <span className={`size-2 rounded-sm ${p.dot}`} />
+                  <span className="truncate">{p.name}</span>
+                </div>
+                <div className="mt-1.5 space-y-1">
+                  {p.agents.map((a) => {
+                    n += 1;
+                    const s = KB_STATE[states[n]];
+                    const selected = n === 0;
+                    return (
+                      <div
+                        key={a.cli + a.task}
+                        className={`flex items-center gap-2 rounded-md px-2 py-1.5 transition-colors duration-300 ${
+                          selected ? "bg-white/[0.06]" : ""
+                        }`}
+                      >
+                        <span className={`size-1.5 shrink-0 rounded-full transition-colors duration-300 ${s.dot}`} />
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate text-paper/80">{a.cli}</span>
+                          <span className="hidden truncate text-[10px] text-fog sm:block">{a.task}</span>
+                        </span>
+                        <span className={`hidden shrink-0 text-[9px] transition-colors duration-300 lg:inline ${s.text}`}>{s.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* main: the selected agent's terminal */}
+          <div className="flex min-w-0 flex-1 flex-col">
+            <div className="flex items-center gap-4 border-b border-white/5 px-4 py-2 text-[10px] text-fog">
+              <span className="text-paper">terminal</span>
+              <span>tâches</span>
+              <span>changements</span>
+              <span className="hidden sm:inline">notes</span>
+            </div>
+            <div className="min-h-0 flex-1 space-y-1.5 overflow-hidden p-4">
+              {KB_TERM.map((l, i) => (
+                <motion.div
+                  key={l.t}
+                  initial={{ opacity: 0, x: -6 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.35, duration: 0.6, ease: EASE }}
+                  className={`truncate ${l.tone}`}
+                >
+                  {l.t}
+                </motion.div>
+              ))}
+              <span className="inline-block h-3.5 w-1.5 animate-pulse bg-paper/70 align-middle" />
+            </div>
+          </div>
+        </div>
+      </Frame>
+
+      {/* the signal: an agent is waiting for you */}
+      <motion.div
+        key={waiting > 0 ? "wait" : "idle"}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: EASE }}
+        className="absolute bottom-5 right-5 flex items-center gap-2 rounded-full bg-[#0B0E14] px-3.5 py-2 font-mono text-[11px] text-white shadow-xl ring-1 ring-white/10"
+      >
+        <span className={`size-1.5 rounded-full ${waiting > 0 ? "bg-amber-300" : "bg-accent animate-pulse"}`} />
+        {waiting > 0 ? `${waiting} agent${waiting > 1 ? "s" : ""} attend${waiting > 1 ? "ent" : ""} ta réponse` : "5 agents au travail"}
+      </motion.div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 04 · SayBack                                                        */
 /* ------------------------------------------------------------------ */
 
 const SUMMARY = [
@@ -295,7 +443,7 @@ export function SayBackVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 04 · Agents autonomes: deliberately generic                         */
+/* 05 · Agents autonomes: deliberately generic                         */
 /* ------------------------------------------------------------------ */
 
 const AGENTS = [

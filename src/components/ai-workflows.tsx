@@ -33,7 +33,7 @@ function Terminal({ shown }: { shown: number }) {
           <motion.div
             key={i}
             initial={false}
-            animate={i < shown ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -6, filter: "blur(4px)" }}
+            animate={i < shown ? { opacity: 1, x: 0 } : { opacity: 0, x: -6 }}
             transition={{ duration: 0.35, ease: EASE }}
             className={`whitespace-pre ${TONE[l.tone ?? ""] ?? "text-paper"}`}
           >
@@ -64,7 +64,7 @@ export function AiWorkflows() {
       <motion.div
         aria-hidden
         style={{ x: glowX }}
-        className="pointer-events-none absolute -top-40 left-0 size-[700px] rounded-full bg-accent/[0.045] blur-[140px]"
+        className="pointer-events-none absolute -top-40 left-0 size-[900px] bg-[radial-gradient(closest-side,rgba(204,255,61,0.06),transparent)]"
       />
 
       <div className="relative mx-auto max-w-[1600px] px-4 sm:px-8">
@@ -86,7 +86,7 @@ export function AiWorkflows() {
           transition={{ duration: 1, ease: EASE, delay: 0.3 }}
           className="mt-8 max-w-[56ch] text-pretty text-lg leading-relaxed text-paper/75 md:text-xl"
         >
-          Un agent qui écrit du code, tout le monde sait le lancer. Ce qui compte, c&apos;est qu&apos;il livre la bonne chose, sans rien casser, et qu&apos;on puisse le prouver. C&apos;est comme ça que j&apos;ai livré 2 133 commits en onze semaines sans perdre la maîtrise du produit.
+          Un agent qui écrit du code, tout le monde sait le lancer. Ce qui compte, c&apos;est qu&apos;il livre la bonne chose, sans rien casser, et qu&apos;on puisse le prouver. C&apos;est comme ça que j&apos;ai mis une app métier en production en six semaines, sans perdre la maîtrise du produit.
         </motion.p>
 
         <div ref={ref} className="mt-20 grid gap-12 lg:grid-cols-12 lg:gap-16">

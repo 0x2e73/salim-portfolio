@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { AsciiPortrait } from "./ascii-portrait";
+import { AsciiField } from "./ascii-field";
 import { PROFILE } from "@/data/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -51,7 +51,7 @@ export function Hero() {
   return (
     <section ref={ref} id="top" className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <motion.div style={{ y: canvasY, opacity: canvasOpacity, scale }} className="absolute inset-0">
-        <AsciiPortrait src="/salim-cutout.png" className="absolute inset-0 h-full w-full opacity-60 md:opacity-100" />
+        <AsciiField fadeLeft className="absolute inset-0 h-full w-full opacity-50 md:opacity-100" />
         {/* soft fade into the page */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink to-transparent" />
       </motion.div>

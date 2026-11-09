@@ -10,20 +10,20 @@ export const PROFILE = {
 };
 
 export const STATS = [
-  { value: "2 133", label: "commits en 11 semaines" },
+  { value: "5 ans", label: "de logiciel livré en production" },
   { value: "1", label: "app métier en prod, construite seul" },
-  { value: "5 883", label: "tâches migrées le jour 1" },
-  { value: "302", label: "fichiers de tests auto" },
-  { value: "44", label: "releases publiées" },
+  { value: "6 sem.", label: "du premier jour à la mise en production" },
+  { value: "39", label: "utilisateurs migrés sur la nouvelle app" },
+  { value: "5 883", label: "tâches reprises de l'ancien outil" },
   { value: "MIT", label: "app open source" },
   { value: "24/7", label: "agents IA autonomes" },
 ];
 
 export const MANIFESTO =
-  "Étudiant Technicien ES à Genève, bientôt à l'HEPIA. En parallèle de mes études, je travaille en indépendant : des produits conçus, codés et livrés de bout en bout, pour des équipes qui s'en servent tous les jours.";
+  "Cinq ans que je livre du logiciel en production. Quatre ans dans la gestion d'actifs à Genève, puis en indépendant : des outils conçus et livrés de bout en bout, pour des équipes qui s'en servent tous les jours.";
 
 /** Words of the manifesto rendered in the accent serif. */
-export const MANIFESTO_EMPHASIS = ["l'HEPIA.", "indépendant", "jours."];
+export const MANIFESTO_EMPHASIS = ["production.", "indépendant", "jours."];
 
 export type Experience = {
   company: string;
@@ -56,9 +56,9 @@ export const EXPERIENCE: Experience[] = [
     ],
     stack: ["Next.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "BullMQ", "Redis"],
     metrics: [
-      { value: "2 133", label: "commits" },
-      { value: "163", label: "PR fusionnées" },
-      { value: "60", label: "migrations BDD" },
+      { value: "39", label: "utilisateurs migrés" },
+      { value: "157", label: "projets repris" },
+      { value: "5 883", label: "tâches reprises" },
       { value: "6 sem.", label: "jusqu'à la prod" },
     ],
     note: "Nom du client communiqué sur demande.",
@@ -113,7 +113,7 @@ export const EXPERIENCE: Experience[] = [
     role: "Sites, apps mobiles, refontes",
     period: "2023 → aujourd'hui",
     summary:
-      "En parallèle de mes études, des projets livrés de bout en bout pour des entreprises qui avaient besoin de résultats, pas de maquettes.",
+      "Des projets livrés de bout en bout pour des entreprises qui avaient besoin de résultats, pas de maquettes.",
     points: [
       "Application mobile React Native pour un salon de coiffure, avec une interface clients et une interface équipe",
       "Sites vitrines rapides et animés pour des entreprises du bâtiment et des services",
@@ -140,7 +140,9 @@ export type Project = {
   stack: string[];
   href?: string;
   hrefLabel?: string;
-  visual: "erp" | "leanppc" | "kanbell" | "sayback" | "agents";
+  /** Label of the call-to-action button shown under the description. */
+  cta?: string;
+  visual: "erp" | "offres" | "leanppc" | "kanbell" | "sayback" | "agents";
 };
 
 export const FEATURED: Project[] = [
@@ -165,8 +167,28 @@ export const FEATURED: Project[] = [
     visual: "erp",
   },
   {
-    slug: "leanppc",
+    slug: "offres",
     index: "02",
+    name: "Lecteur d'offres IA",
+    tagline: "Les offres arrivent. Le comparatif se remplit.",
+    status: "Fonctionnel · prêt à déployer",
+    description:
+      "Le problème : les offres des entreprises arrivent en PDF, en scan ou par e-mail, et doivent être ressaisies à la main avant de pouvoir les comparer. La solution : l'IA lit chaque offre, en extrait les montants et les conditions, puis remplit le comparatif. Dès qu'elle doute, c'est un humain qui valide.",
+    features: [
+      { title: "Toutes les sources", body: "PDF, scans, e-mails, fichiers CRB" },
+      { title: "Champs extraits", body: "Montants, rabais, TVA, délais, CFC" },
+      { title: "Tri des réponses", body: "Offre, question, refus, absence" },
+      { title: "Validation humaine", body: "Sous 70 % de confiance ou scan illisible" },
+      { title: "Jamais en silence", body: "Un échec part toujours en relecture" },
+      { title: "Comparatif", body: "Prix, complétude et conditions pondérés" },
+    ],
+    stack: ["Claude", "TypeScript", "Zod", "PostgreSQL"],
+    hrefLabel: "Étude de cas anonymisée",
+    visual: "offres",
+  },
+  {
+    slug: "leanppc",
+    index: "03",
     name: "LeanPPC",
     tagline: "One-click Google Ads pour Shopify.",
     status: "App Shopify",
@@ -183,7 +205,7 @@ export const FEATURED: Project[] = [
   },
   {
     slug: "kanbell",
-    index: "03",
+    index: "04",
     name: "Kanbell",
     tagline: "Dix agents de code. Aucun perdu de vue.",
     status: "macOS · Linux",
@@ -200,11 +222,12 @@ export const FEATURED: Project[] = [
     stack: ["Electron", "React", "TypeScript", "node-pty", "xterm.js"],
     href: "https://kanbell.com",
     hrefLabel: "kanbell.com",
+    cta: "Télécharger · essai gratuit",
     visual: "kanbell",
   },
   {
     slug: "sayback",
-    index: "04",
+    index: "05",
     name: "SayBack",
     tagline: "La réunion passe. Le contexte reste.",
     status: "Open source · MIT",
@@ -219,11 +242,12 @@ export const FEATURED: Project[] = [
     stack: ["Electron", "TypeScript", "whisper", "Ollama"],
     href: "https://github.com/0x2e73/sayback-app",
     hrefLabel: "github.com/0x2e73/sayback-app",
+    cta: "Voir le code sur GitHub",
     visual: "sayback",
   },
   {
     slug: "agents",
-    index: "05",
+    index: "06",
     name: "Agents autonomes",
     tagline: "Automatisation par workflows IA.",
     status: "En production · 24/7",
@@ -239,6 +263,12 @@ export const FEATURED: Project[] = [
     visual: "agents",
   },
 ];
+
+/**
+ * A client's words, with their title if they prefer not to be named. The
+ * section stays hidden while this is null: never write a quote nobody said.
+ */
+export const TESTIMONIAL: { quote: string; author: string; context: string } | null = null;
 
 export const INDEX = [
   { name: "Merge", kind: "Gestionnaire de projets, pour moi", year: "2026", stack: "React 19 · Hono · Postgres", image: null },

@@ -15,12 +15,13 @@ function useDesktop() {
   return desktop;
 }
 import { FEATURED, type Project } from "@/data/content";
-import { AgentsVisual, ErpVisual, KanbellVisual, LeanVisual, SayBackVisual } from "./project-visuals";
+import { AgentsVisual, ErpVisual, KanbellVisual, LeanVisual, OffresVisual, SayBackVisual } from "./project-visuals";
 import { MaskLine, SectionLabel } from "./reveal";
 import { Scramble } from "./scramble";
 
 const VISUALS = {
   erp: ErpVisual,
+  offres: OffresVisual,
   leanppc: LeanVisual,
   kanbell: KanbellVisual,
   sayback: SayBackVisual,
@@ -57,6 +58,17 @@ function Card({ p, i, total, progress }: { p: Project; i: number; total: number;
             </h3>
             <p className="mt-3 font-serif text-[clamp(1.3rem,2.2vw,2rem)] italic leading-tight text-accent">{p.tagline}</p>
             <p className="mt-5 max-w-[48ch] text-pretty text-[15px] leading-relaxed text-paper/70 lg:text-base">{p.description}</p>
+            {p.href && (
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="Ouvrir"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-mono text-[12px] text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
+              >
+                {p.cta ?? p.hrefLabel} <span aria-hidden>↗</span>
+              </a>
+            )}
           </div>
 
           <div className="mt-8 hidden min-h-0 flex-1 flex-col lg:flex">
@@ -125,7 +137,7 @@ export function Projects() {
             </MaskLine>
           </h2>
           <p className="max-w-[34ch] pb-3 text-fog">
-            Cinq projets qui tournent pour de vrai : une app métier, un SaaS Shopify, une app de bureau pour agents de code, un logiciel open source et des agents autonomes.
+            Une app métier, un lecteur d’offres par IA prêt à déployer, un SaaS Shopify, une app de bureau pour agents de code, un logiciel open source et des agents autonomes.
           </p>
         </div>
       </div>

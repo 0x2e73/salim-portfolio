@@ -198,7 +198,130 @@ export function ErpVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 02 · LeanPPC: the real landing page                                 */
+/* 02 · Lecteur d'offres: a fictional offer, read field by field       */
+/* ------------------------------------------------------------------ */
+
+// Fictional company and amounts, not taken from any real offer.
+const OFFER_FIELDS = [
+  { k: "Entreprise", v: "Exemple Ventilation SA", c: 0.98 },
+  { k: "Total net TTC", v: "CHF 184 320.00", c: 0.97 },
+  { k: "Rabais", v: "5 %", c: 0.93 },
+  { k: "Escompte", v: "2 % à 30 jours", c: 0.9 },
+  { k: "CFC 244 · Ventilation", v: "CHF 96 400.00", c: 0.88 },
+  { k: "Délai", v: "6 semaines ?", c: 0.58 },
+];
+
+function FakeOffer({ play }: { play: boolean }) {
+  const lines = [70, 52, 0, 88, 76, 82, 0, 64, 90, 58, 84, 0, 46, 72, 80, 0, 66, 54, 86, 74, 0, 60, 78];
+  return (
+    <div className="relative h-full w-full bg-[#f7f7f5] p-4">
+      <div className="mb-3 flex items-start justify-between">
+        <div className="h-3 w-20 rounded-sm bg-[#2a2a2e]" />
+        <div className="space-y-1 text-right">
+          <div className="ml-auto h-1.5 w-16 rounded-sm bg-black/20" />
+          <div className="ml-auto h-1.5 w-10 rounded-sm bg-black/15" />
+        </div>
+      </div>
+      <div className="mb-3 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-black/60">Offre n° 26-118</div>
+      <div className="space-y-1.5">
+        {lines.map((w, i) =>
+          w === 0 ? (
+            <div key={i} className="h-1" />
+          ) : (
+            <div key={i} className="flex items-center gap-2">
+              <div className="h-1.5 rounded-sm bg-black/15" style={{ width: `${w * 0.7}%` }} />
+              <div className="ml-auto h-1.5 w-8 rounded-sm bg-black/25" />
+            </div>
+          ),
+        )}
+      </div>
+      <div className="mt-3 flex justify-end border-t border-black/10 pt-2">
+        <div className="h-2 w-16 rounded-sm bg-[#2a2a2e]" />
+      </div>
+      {/* reading head */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 h-8 bg-gradient-to-b from-transparent via-[rgba(204,255,61,0.35)] to-transparent"
+        initial={{ top: "-10%" }}
+        animate={play ? { top: ["-10%", "100%"] } : {}}
+        transition={{ duration: 2.4, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.2 }}
+      />
+    </div>
+  );
+}
+
+export function OffresVisual() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-20%" });
+
+  return (
+    <div ref={ref} className="relative h-full w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 40, rotate: 0 }}
+        animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
+        transition={{ duration: 1.1, ease: EASE }}
+        className="absolute left-[2%] top-[4%] w-[46%]"
+      >
+        <Frame title="offre-exemple.pdf">
+          <div className="aspect-[4/5]">
+            <FakeOffer play={inView} />
+          </div>
+        </Frame>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1.2, ease: EASE, delay: 0.25 }}
+        className="absolute right-[2%] top-[14%] w-[56%]"
+      >
+        <Frame title="extraction · offre n° 26-118">
+          <ul className="divide-y divide-white/5 p-1">
+            {OFFER_FIELDS.map((f, i) => {
+              const doubt = f.c < 0.7;
+              return (
+                <motion.li
+                  key={f.k}
+                  initial={{ opacity: 0, x: 12 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, ease: EASE, delay: 0.9 + i * 0.22 }}
+                  className={`${i > 3 ? "hidden sm:grid" : "grid"} grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 px-2.5 py-2`}
+                >
+                  <span className="truncate text-[9px] uppercase tracking-wider text-fog">{f.k}</span>
+                  <span className={`font-mono text-[9px] tabular-nums ${doubt ? "text-amber-300" : "text-fog"}`}>
+                    {Math.round(f.c * 100)} %
+                  </span>
+                  <span className={`truncate text-[11px] ${doubt ? "text-amber-300" : "text-paper/90"}`}>{f.v}</span>
+                  <span className="h-1 w-14 overflow-hidden rounded bg-white/10">
+                    <motion.span
+                      className={`block h-full origin-left ${doubt ? "bg-amber-300" : "bg-accent"}`}
+                      initial={{ scaleX: 0 }}
+                      animate={inView ? { scaleX: f.c } : {}}
+                      transition={{ duration: 0.8, ease: EASE, delay: 1.1 + i * 0.22 }}
+                    />
+                  </span>
+                </motion.li>
+              );
+            })}
+          </ul>
+        </Frame>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.8, ease: EASE, delay: 2.4 }}
+        className="absolute bottom-[4%] right-[2%] flex items-center gap-2 rounded-full bg-amber-300 px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-ink"
+      >
+        <span className="size-1.5 rounded-full bg-ink" />
+        Délai à relire · un humain valide
+      </motion.div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 03 · LeanPPC: the real landing page                                 */
 /* ------------------------------------------------------------------ */
 
 export function LeanVisual() {
@@ -241,7 +364,7 @@ export function LeanVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 03 · Kanbell: a fictional workspace, drawn in code                  */
+/* 04 · Kanbell: a fictional workspace, drawn in code                  */
 /* ------------------------------------------------------------------ */
 
 type AgentState = "work" | "wait" | "done";
@@ -389,7 +512,7 @@ export function KanbellVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 04 · SayBack                                                        */
+/* 05 · SayBack                                                        */
 /* ------------------------------------------------------------------ */
 
 const SUMMARY = [
@@ -416,8 +539,8 @@ export function SayBackVisual() {
           {Array.from({ length: bars }).map((_, i) => (
             <motion.span
               key={i}
-              className="w-full rounded-full bg-white/80"
-              animate={inView ? { height: ["20%", `${30 + ((i * 37) % 70)}%`, "25%"] } : { height: "20%" }}
+              className="h-full w-full origin-center rounded-full bg-white/80"
+              animate={inView ? { scaleY: [0.2, (30 + ((i * 37) % 70)) / 100, 0.25] } : { scaleY: 0.2 }}
               transition={{ duration: 1.2 + ((i * 13) % 10) / 10, repeat: Infinity, ease: "easeInOut", delay: (i % 7) * 0.08 }}
             />
           ))}
@@ -443,7 +566,7 @@ export function SayBackVisual() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 05 · Agents autonomes: deliberately generic                         */
+/* 06 · Agents autonomes: deliberately generic                         */
 /* ------------------------------------------------------------------ */
 
 const AGENTS = [

@@ -8,6 +8,7 @@ import { Nav } from "@/components/nav";
 import { ProjectIndex } from "@/components/project-index";
 import { Projects } from "@/components/projects";
 import { Stack } from "@/components/stack";
+import { Testimonial } from "@/components/testimonial";
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
         <Marquee />
         <Manifesto />
         <Experience />
+        <Testimonial />
         <Projects />
         <ProjectIndex />
         <AiWorkflows />

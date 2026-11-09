@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring, useScroll, useTransform } from "moti
 import { useRef } from "react";
 import { PROFILE } from "@/data/content";
 import { SectionLabel } from "./reveal";
-import { AsciiPortrait } from "./ascii-portrait";
+import { AsciiField } from "./ascii-field";
 
 function Magnetic({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -39,9 +39,8 @@ export function Contact() {
 
   return (
     <section ref={ref} id="contact" className="relative overflow-hidden px-4 pb-8 pt-28 sm:px-8 md:pt-40">
-      <AsciiPortrait
-        src="/salim-cutout.png"
-        rows={80}
+      <AsciiField
+        rows={60}
         className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[55%] opacity-35 [mask-image:linear-gradient(to_bottom,transparent,black_30%,black_70%,transparent)] md:block"
       />
       <div className="relative mx-auto max-w-[1600px]">
@@ -82,7 +81,7 @@ export function Contact() {
 
         <footer className="mt-28 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-fog">
           <span>© {new Date().getFullYear()} Salim Mouttaki</span>
-          <span className="hidden md:inline">Portrait rendu en direct, caractère par caractère</span>
+          <span className="hidden md:inline">Relief rendu en direct, caractère par caractère</span>
           <a href="#top" className="text-paper transition-colors hover:text-accent">
             Haut de page ↑
           </a>
